@@ -1,0 +1,35 @@
+#' Read youtube history data
+#'
+#' Reads youtube history data and returns a tibble with the video title and the date of watching the video.
+#'
+#' @param path path of the html file to read
+#'
+#' @return a tibble
+#' @export
+#'
+#' @examples none
+read_youtube_history <- function(path) {
+  data <- xml2::read_html(path)
+
+  title_and_date <- data %>%
+    rvest::html_nodes(xpath = "/html/body/div/div/div/div[2]") %>%
+    rvest::html_text()
+
+  #extract date
+  matches <- regexpr(pattern = "[0-9]{1,2} [A-z]{3} [0-9]{4}, [0-9]{2}:[0-9]{2}:[0-9]{2} [A-Z]{4}", text = title_and_date)
+  video_date <- regmatches(title_and_date, m = matches)
+  video_date <- lubridate::dmy_hms(video_date)
+
+  #extract title
+  video_title <- sub("[0-9]{1,2} [A-z]{3} [0-9]{4}, [0-9]{2}:[0-9]{2}:[0-9]{2} [A-Z]{4}", "", title_and_date)
+  video_title <- sub("Watched", "",video_title)
+
+
+
+  youtube_history <- tibble::tibble(video_title,
+                                    video_date)
+
+}
+
+
+

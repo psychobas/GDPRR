@@ -1,16 +1,24 @@
 Package: GDPRR
-Title: What the Package Does (One Line, Title Case)
+Title: Easily read data made available by the General Data Protection Regulation (GDPR) 
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Dominik",
+           family = "Meier",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
+           email = "dominikmeier@outlook.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+Description: Because of the General Data Protection Regulation (GDPR), many services we use have to provide a means to download our personal data. This package facilitates reading (and analyzing) this data. 
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.0
+Suggests: 
+    testthat
+Imports: 
+    rvest,
+    lubridate,
+    stringr,
+    magrittr,
+    xml2,
+    tibble
