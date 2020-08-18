@@ -4,13 +4,15 @@
 \alias{read_youtube_history}
 \title{Read youtube history data}
 \usage{
-read_youtube_history(path)
+read_youtube_history(path, encoding = "UTF-8")
 }
 \arguments{
 \item{path}{path of the html file to read}
+
+\item{encoding}{encoding to use for xml2::read_html}
 }
 \value{
-tibble
+a tibble
 }
 \description{
 Reads youtube history data and returns a tibble with the video title and the date of watching the video.
