@@ -20,6 +20,9 @@ Imports:
     lubridate,
     magrittr,
     xml2,
-    tibble
+    tibble,
+    jsonlite,
+    data.table,
+    dplyr
 URL: https://github.com/psychobas/GDPRR
 BugReports: https://github.com/psychobas/GDPRR/issues
