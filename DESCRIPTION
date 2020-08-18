@@ -18,7 +18,8 @@ Suggests:
 Imports: 
     rvest,
     lubridate,
-    stringr,
     magrittr,
     xml2,
     tibble
+URL: https://github.com/psychobas/GDPRR
+BugReports: https://github.com/psychobas/GDPRR/issues
